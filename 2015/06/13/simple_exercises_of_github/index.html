@@ -75,7 +75,18 @@
 了解创建并管理分支
 了解如何将修改过的文件提交到代码库
 开启并合并一个上传请求">
-<meta property="og:updated_time" content="2016-03-08T12:57:40.357Z">
+<meta property="og:image" content="https://guides.github.com/activities/hello-world/create-new-repo.png">
+<meta property="og:image" content="https://guides.github.com/activities/hello-world/branching.png">
+<meta property="og:image" content="https://guides.github.com/activities/hello-world/readme-edits.gif">
+<meta property="og:image" content="https://guides.github.com/activities/hello-world/commit.png">
+<meta property="og:image" content="https://guides.github.com/activities/hello-world/pr-tab.gif">
+<meta property="og:image" content="https://guides.github.com/activities/hello-world/pick-branch.png">
+<meta property="og:image" content="https://guides.github.com/activities/hello-world/diff.png">
+<meta property="og:image" content="https://guides.github.com/activities/hello-world/create-pr.png">
+<meta property="og:image" content="https://guides.github.com/activities/hello-world/pr-form.png">
+<meta property="og:image" content="https://guides.github.com/activities/hello-world/merge-button.png">
+<meta property="og:image" content="https://guides.github.com/activities/hello-world/delete-button.png">
+<meta property="og:updated_time" content="2016-03-17T06:27:31.891Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="几个简单的Github操作">
 <meta name="twitter:description" content="如何使用GitHub目标：
@@ -84,6 +95,7 @@
 了解创建并管理分支
 了解如何将修改过的文件提交到代码库
 开启并合并一个上传请求">
+<meta name="twitter:image" content="https://guides.github.com/activities/hello-world/create-new-repo.png">
 
 
 
@@ -320,95 +332,66 @@
 <li>了解如何将修改过的文件提交到代码库</li>
 <li>开启并合并一个上传请求</li>
 </ul>
-<!-- more
-### 创建代码库（远程仓库/repository）
-1. 点击右上角的+号下拉菜单，选择创建代码库（`New repository`）。
-2. 输入仓库的名字，比如hello-world。
-3. 对仓库进行简短的描述。
-4. 选择仓库类型，目前公开的是免费的，私有的需要付费，视个人情况而定。
-5. 接着选择用README文件初始化仓库，同时根据需要选择代码的证书。
-如下图：
+<a id="more"></a>
+<h3 id="创建代码库（远程仓库-repository）"><a href="#创建代码库（远程仓库-repository）" class="headerlink" title="创建代码库（远程仓库/repository）"></a>创建代码库（远程仓库/repository）</h3><ol>
+<li>点击右上角的+号下拉菜单，选择创建代码库（<code>New repository</code>）。</li>
+<li>输入仓库的名字，比如hello-world。</li>
+<li>对仓库进行简短的描述。</li>
+<li>选择仓库类型，目前公开的是免费的，私有的需要付费，视个人情况而定。</li>
+<li>接着选择用README文件初始化仓库，同时根据需要选择代码的证书。<br>如下图：</li>
+</ol>
+<p><img src="https://guides.github.com/activities/hello-world/create-new-repo.png" alt="create repository"></p>
+<h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><p>一般一个项目开发，最起码有4个分支：产品分支(<code>product</code>)、测试分支(<code>test</code>)、开发分支(<code>development</code>)、主分支(<code>master</code>).<br>如果需要开发几个大的功能，而且是团队开发，那么需要在dev的基础上创建自己的分支，即创建一个dev分支的复制。<br>如下图，展示了feature分支完整的生命周期。</p>
+<p><img src="https://guides.github.com/activities/hello-world/branching.png" alt="分支生命周期"></p>
+<p>现在，我们只演示一下如何在master分支上创建分支。</p>
+<ol>
+<li>进入刚才创建的代码库的页面。</li>
+<li>点击分支的下拉框，在搜索框内输入新的分支名字，如readme-edits</li>
+<li>点击创建分支<br>如下图：</li>
+</ol>
+<p><img src="https://guides.github.com/activities/hello-world/readme-edits.gif" alt="此处输入图片的描述"></p>
+<h3 id="修改代码并提交-commit-修改"><a href="#修改代码并提交-commit-修改" class="headerlink" title="修改代码并提交(commit)修改"></a>修改代码并提交(<code>commit</code>)修改</h3><p>现在，我们的代码库有2个分支：master和readme-edits。<br>我们在readme-edits分支上，对本来的readme文件进行修改，然后将改动提交上去。<br>每次提交修改的时候，我们需要输入一些备注，这样可以让别人看到你修改的目的和内容等等，同时也帮助自己以后对项目的复看(<code>review</code>)。<br>接下来，我们进行文件修改和提交：</p>
+<ol>
+<li>点击打开README.md的文件</li>
+<li>点击右侧的修改按钮(铅笔形状)，进入修改页面。</li>
+<li>对文件进行修改</li>
+<li>之后，输入备注</li>
+<li>选择是否创建新的分支，还是提交到当前分支，默认提交到当前分支</li>
+<li>点击提交修改<br>具体操作如下图：</li>
+</ol>
+<p><img src="https://guides.github.com/activities/hello-world/commit.png" alt="此处输入图片的描述"></p>
+<h3 id="建立一个上传请求-Pull-Request"><a href="#建立一个上传请求-Pull-Request" class="headerlink" title="建立一个上传请求(Pull Request)"></a>建立一个上传请求(<code>Pull Request</code>)</h3><p>经过上述步骤后，我们想比较master进行，进行了修改，而且提交了修改，这时候，我们需要发送一次请求，将修改合并到master分支上。<br>现在，来创建一个上传请求：</p>
+<ol>
+<li>点击<code>Pull Request</code>标签，进入页面，点击创建新请求(<code>New pull request</code>)</li>
+</ol>
+<p><img src="https://guides.github.com/activities/hello-world/pr-tab.gif" alt="此处输入图片的描述"></p>
+<ol>
+<li>选择创建的分支，与master分支，进行比较</li>
+</ol>
+<p><img src="https://guides.github.com/activities/hello-world/pick-branch.png" alt="此处输入图片的描述"></p>
+<ol>
+<li>浏览你做的修改，并和master分支进行比较，确保是你想要提交的东西。</li>
+</ol>
+<p><img src="https://guides.github.com/activities/hello-world/diff.png" alt="此处输入图片的描述"></p>
+<ol>
+<li>当你确保这些修改是你想要提交的修改，点击绿色的创建上传按钮。</li>
+</ol>
+<p><img src="https://guides.github.com/activities/hello-world/create-pr.png" alt="此处输入图片的描述"></p>
+<ol>
+<li>给你的这次请求写一个标题，同时写简短的描述</li>
+</ol>
+<p><img src="https://guides.github.com/activities/hello-world/pr-form.png" alt="此处输入图片的描述"></p>
+<h3 id="允许请求，合并代码"><a href="#允许请求，合并代码" class="headerlink" title="允许请求，合并代码"></a>允许请求，合并代码</h3><p>最后，将readme-edits分支合并到master分支：</p>
+<ol>
+<li>点击合并请求按钮，将分支合并到master分支</li>
+<li>点击确认合并</li>
+<li>当合并完成后，就可以删除readme-edits分支了。</li>
+</ol>
+<p><img src="https://guides.github.com/activities/hello-world/merge-button.png" alt="此处输入图片的描述"></p>
+<p><img src="https://guides.github.com/activities/hello-world/delete-button.png" alt="此处输入图片的描述"></p>
+<p>至此，已经完成了Github的一些基本操作。</p>
+<p>本文原文：<a href="https://guides.github.com/activities/hello-world/" target="_blank" rel="external">https://guides.github.com/activities/hello-world/</a></p>
 
-![create repository][1]
-
-### 创建分支
-一般一个项目开发，最起码有4个分支：产品分支(`product`)、测试分支(`test`)、开发分支(`development`)、主分支(`master`).
-如果需要开发几个大的功能，而且是团队开发，那么需要在dev的基础上创建自己的分支，即创建一个dev分支的复制。
-如下图，展示了feature分支完整的生命周期。
-
-![分支生命周期][2]
-
-现在，我们只演示一下如何在master分支上创建分支。
-1. 进入刚才创建的代码库的页面。
-2. 点击分支的下拉框，在搜索框内输入新的分支名字，如readme-edits
-3. 点击创建分支
-如下图：
-
-![此处输入图片的描述][3]
-
-### 修改代码并提交(`commit`)修改
-现在，我们的代码库有2个分支：master和readme-edits。
-我们在readme-edits分支上，对本来的readme文件进行修改，然后将改动提交上去。
-每次提交修改的时候，我们需要输入一些备注，这样可以让别人看到你修改的目的和内容等等，同时也帮助自己以后对项目的复看(`review`)。
-接下来，我们进行文件修改和提交：
-1. 点击打开README.md的文件
-2. 点击右侧的修改按钮(铅笔形状)，进入修改页面。
-3. 对文件进行修改
-4. 之后，输入备注
-5. 选择是否创建新的分支，还是提交到当前分支，默认提交到当前分支
-6. 点击提交修改
-具体操作如下图：
-
-![此处输入图片的描述][4]
-
-### 建立一个上传请求(`Pull Request`)
-经过上述步骤后，我们想比较master进行，进行了修改，而且提交了修改，这时候，我们需要发送一次请求，将修改合并到master分支上。
-现在，来创建一个上传请求：
-1. 点击`Pull Request`标签，进入页面，点击创建新请求(`New pull request`)
-
-![此处输入图片的描述][5]
-
-2. 选择创建的分支，与master分支，进行比较
-
-![此处输入图片的描述][6]
-
-3. 浏览你做的修改，并和master分支进行比较，确保是你想要提交的东西。
-
-![此处输入图片的描述][7]
-
-4. 当你确保这些修改是你想要提交的修改，点击绿色的创建上传按钮。
-
-![此处输入图片的描述][8]
-
-5. 给你的这次请求写一个标题，同时写简短的描述
-
-![此处输入图片的描述][9]
-
-### 允许请求，合并代码
-最后，将readme-edits分支合并到master分支：
-1. 点击合并请求按钮，将分支合并到master分支
-2. 点击确认合并
-3. 当合并完成后，就可以删除readme-edits分支了。
-
-![此处输入图片的描述][10]
-
-![此处输入图片的描述][11]
-
-至此，已经完成了Github的一些基本操作。
-
-本文原文：https://guides.github.com/activities/hello-world/
-  [1]: https://guides.github.com/activities/hello-world/create-new-repo.png
-  [2]: https://guides.github.com/activities/hello-world/branching.png
-  [3]: https://guides.github.com/activities/hello-world/readme-edits.gif
-  [4]: https://guides.github.com/activities/hello-world/commit.png
-  [5]: https://guides.github.com/activities/hello-world/pr-tab.gif
-  [6]: https://guides.github.com/activities/hello-world/pick-branch.png
-  [7]: https://guides.github.com/activities/hello-world/diff.png
-  [8]: https://guides.github.com/activities/hello-world/create-pr.png
-  [9]: https://guides.github.com/activities/hello-world/pr-form.png
-  [10]: https://guides.github.com/activities/hello-world/merge-button.png
-  [11]: https://guides.github.com/activities/hello-world/delete-button.png
--->
       
     </div>
 
@@ -651,7 +634,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用GitHub"><span class="nav-number">1.</span> <span class="nav-text">如何使用GitHub</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用GitHub"><span class="nav-number">1.</span> <span class="nav-text">如何使用GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建代码库（远程仓库-repository）"><span class="nav-number">1.1.</span> <span class="nav-text">创建代码库（远程仓库/repository）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建分支"><span class="nav-number">1.2.</span> <span class="nav-text">创建分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改代码并提交-commit-修改"><span class="nav-number">1.3.</span> <span class="nav-text">修改代码并提交(commit)修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立一个上传请求-Pull-Request"><span class="nav-number">1.4.</span> <span class="nav-text">建立一个上传请求(Pull Request)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#允许请求，合并代码"><span class="nav-number">1.5.</span> <span class="nav-text">允许请求，合并代码</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
