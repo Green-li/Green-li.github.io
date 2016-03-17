@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://limaolong.cn/"/>
-  <updated>2016-03-08T12:56:58.693Z</updated>
+  <updated>2016-03-17T06:26:01.979Z</updated>
   <id>http://limaolong.cn/</id>
   
   <author>
@@ -20,70 +20,45 @@
     <link href="http://limaolong.cn/2015/09/18/how%20to%20FK%20GFW/"/>
     <id>http://limaolong.cn/2015/09/18/how to FK GFW/</id>
     <published>2015-09-17T16:00:00.000Z</published>
-    <updated>2016-03-08T12:56:58.693Z</updated>
+    <updated>2016-03-17T06:26:01.979Z</updated>
     
     <content type="html">&lt;p&gt;为了构建和谐社会，我国建立起强大的网络城墙，保护我们免受境外有害信息的荼毒。&lt;br&gt;作为社会主义和谐社会的一员，我们来学习一下如何科学的上网！&lt;/p&gt;
-&lt;!-- more
-### 使用OPENSHIFT
-详情请见：[HOW TO FUCK GFW][1]
-
-### 使用getlantern
-1. 下载lantern。
-Windows：[点击下载][2]
-Linux 32bit：[点击下载][3]
-Linux 64bit：[点击下载][4]
-最新版本请访问如下地址：https://github.com/getlantern/lantern
-
-2. 下载好之后，
-- Ubuntu：直接打开`lantern-installer-beta-64-bit.deb`，进行安装。
-- Windows：双击运行`lantern-installer-beta.exe`，直接进行安装。
-3. 安装之后，搜索lantern，直接打开。
-4. 正常情况下，会自动打开浏览器（一般是Chrome）。
-5. 此时，即可科学的上网。
-
-#### 其他Linux，打开终端，输入：
-    1. `git clone https://github.com/getlantern/lantern.git`
-    2. `cd lantern`
-    3. `make lantern`
-    4. `./lantern`
-
-PS：如果lantern并不是很稳定，先卸载迅雷、XX管家、XX卫士再试试看，如果不行，可使用XX-net。
-
-### 使用XX-net
-本教程使用的浏览器是Chrome浏览器。
-
-1. 下载XX-net
-测试版：[点击下载][5]
-稳定版：[点击下载][6]
-其他版本以及集成的浏览器等请见：https://github.com/XX-net/XX-Net
-
-2. 安装SwitchyOmega
-打开Chrome浏览器，点击右上角，选择更多工具(more tools)，点击扩展程序（Extensions）。
-解压下载的XX-net，打开文件夹，进入SwitchyOmega文件夹，将扩展名为crx的文件拖到扩展程序，直接安装。
-接着，进入SwitchyOmege配置页面，选则导入/导出，将SwitchyOmega文件夹里的扩展名为bak的配置文件导入进去。
-点击右上角的圆圈，选择自动切换。
-
-3. 运行XX-net
-Windows用户：下载后之后，直接解压，打开根目录，点击start.bat运行，会自动打开浏览器的配置页面，如果状态正常此时即可科学上网了。
-Linux用户：解压之后，进入XX-net文件夹，直接运行./start.sh，打开浏览器即可上网。
-PS：在不配置的情况下，默认使用公共ID，无法下载，无法看视频。若要部署自己的APPID，请看：https://github.com/XX-net/XX-Net/wiki/how-to-create-my-appids
-
-  [1]: http://andy-yao.me/2015/09/06/HOW-TO-FUCK-GFW/
-  [2]: https://raw.githubusercontent.com/getlantern/lantern-binaries/master/lantern-installer-beta.exe
-  [3]: https://raw.githubusercontent.com/getlantern/lantern-binaries/master/lantern-installer-beta-32-bit.deb
-  [4]: https://raw.githubusercontent.com/getlantern/lantern-binaries/master/lantern-installer-beta-64-bit.deb
-  [5]: https://codeload.github.com/XX-net/XX-Net/zip/2.8.10
-  [6]: https://codeload.github.com/XX-net/XX-Net/zip/2.8.9
---&gt;</content>
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;使用OPENSHIFT&quot;&gt;&lt;a href=&quot;#使用OPENSHIFT&quot; class=&quot;headerlink&quot; title=&quot;使用OPENSHIFT&quot;&gt;&lt;/a&gt;使用OPENSHIFT&lt;/h3&gt;&lt;p&gt;详情请见：&lt;a href=&quot;http://andy-yao.me/2015/09/06/HOW-TO-FUCK-GFW/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;HOW TO FUCK GFW&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;使用getlantern&quot;&gt;&lt;a href=&quot;#使用getlantern&quot; class=&quot;headerlink&quot; title=&quot;使用getlantern&quot;&gt;&lt;/a&gt;使用getlantern&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;下载lantern。&lt;br&gt;Windows：&lt;a href=&quot;https://raw.githubusercontent.com/getlantern/lantern-binaries/master/lantern-installer-beta.exe&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点击下载&lt;/a&gt;&lt;br&gt;Linux 32bit：&lt;a href=&quot;https://raw.githubusercontent.com/getlantern/lantern-binaries/master/lantern-installer-beta-32-bit.deb&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点击下载&lt;/a&gt;&lt;br&gt;Linux 64bit：&lt;a href=&quot;https://raw.githubusercontent.com/getlantern/lantern-binaries/master/lantern-installer-beta-64-bit.deb&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点击下载&lt;/a&gt;&lt;br&gt;最新版本请访问如下地址：&lt;a href=&quot;https://github.com/getlantern/lantern&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/getlantern/lantern&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;下载好之后，&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Ubuntu：直接打开&lt;code&gt;lantern-installer-beta-64-bit.deb&lt;/code&gt;，进行安装。&lt;/li&gt;
+&lt;li&gt;Windows：双击运行&lt;code&gt;lantern-installer-beta.exe&lt;/code&gt;，直接进行安装。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;安装之后，搜索lantern，直接打开。&lt;/li&gt;
+&lt;li&gt;正常情况下，会自动打开浏览器（一般是Chrome）。&lt;/li&gt;
+&lt;li&gt;此时，即可科学的上网。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;其他Linux，打开终端，输入：&quot;&gt;&lt;a href=&quot;#其他Linux，打开终端，输入：&quot; class=&quot;headerlink&quot; title=&quot;其他Linux，打开终端，输入：&quot;&gt;&lt;/a&gt;其他Linux，打开终端，输入：&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;1. `git clone https://github.com/getlantern/lantern.git`
+2. `cd lantern`
+3. `make lantern`
+4. `./lantern`
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;PS：如果lantern并不是很稳定，先卸载迅雷、XX管家、XX卫士再试试看，如果不行，可使用XX-net。&lt;/p&gt;
+&lt;h3 id=&quot;使用XX-net&quot;&gt;&lt;a href=&quot;#使用XX-net&quot; class=&quot;headerlink&quot; title=&quot;使用XX-net&quot;&gt;&lt;/a&gt;使用XX-net&lt;/h3&gt;&lt;p&gt;本教程使用的浏览器是Chrome浏览器。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;下载XX-net&lt;br&gt;测试版：&lt;a href=&quot;https://codeload.github.com/XX-net/XX-Net/zip/2.8.10&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点击下载&lt;/a&gt;&lt;br&gt;稳定版：&lt;a href=&quot;https://codeload.github.com/XX-net/XX-Net/zip/2.8.9&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点击下载&lt;/a&gt;&lt;br&gt;其他版本以及集成的浏览器等请见：&lt;a href=&quot;https://github.com/XX-net/XX-Net&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/XX-net/XX-Net&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装SwitchyOmega&lt;br&gt;打开Chrome浏览器，点击右上角，选择更多工具(more tools)，点击扩展程序（Extensions）。&lt;br&gt;解压下载的XX-net，打开文件夹，进入SwitchyOmega文件夹，将扩展名为crx的文件拖到扩展程序，直接安装。&lt;br&gt;接着，进入SwitchyOmege配置页面，选则导入/导出，将SwitchyOmega文件夹里的扩展名为bak的配置文件导入进去。&lt;br&gt;点击右上角的圆圈，选择自动切换。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;运行XX-net&lt;br&gt;Windows用户：下载后之后，直接解压，打开根目录，点击start.bat运行，会自动打开浏览器的配置页面，如果状态正常此时即可科学上网了。&lt;br&gt;Linux用户：解压之后，进入XX-net文件夹，直接运行./start.sh，打开浏览器即可上网。&lt;br&gt;PS：在不配置的情况下，默认使用公共ID，无法下载，无法看视频。若要部署自己的APPID，请看：&lt;a href=&quot;https://github.com/XX-net/XX-Net/wiki/how-to-create-my-appids&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/XX-net/XX-Net/wiki/how-to-create-my-appids&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
     
     <summary type="html">
     
       &lt;p&gt;为了构建和谐社会，我国建立起强大的网络城墙，保护我们免受境外有害信息的荼毒。&lt;br&gt;作为社会主义和谐社会的一员，我们来学习一下如何科学的上网！&lt;/p&gt;
-&lt;!-- more
-### 使用OPENSHIFT
-详情请见：[HOW TO FUCK GFW][1]
-
-### 使用ge
     
     </summary>
     
@@ -103,91 +78,58 @@ PS：在不配置的情况下，默认使用公共ID，无法下载，无法看�
     <link href="http://limaolong.cn/2015/07/16/lamp/"/>
     <id>http://limaolong.cn/2015/07/16/lamp/</id>
     <published>2015-07-15T16:00:00.000Z</published>
-    <updated>2016-03-08T12:53:04.914Z</updated>
+    <updated>2016-03-17T07:00:45.349Z</updated>
     
     <content type="html">&lt;p&gt;之前，每次安装都是乱七八糟的就搞好了，然后并没有一个好的完整的记录过程，所以导致之后弄的时候，有时候很顺，有时候就问题一大堆。&lt;br&gt;所以，这次就打算把整个过程记下来，一来供以后参考，二来可以与其他人讨论一下。&lt;/p&gt;
-&lt;!-- more
-## Apache
-### 安装
-使用以下命令安装apache2：
-
-    sudo apt-get install apache2
-
-通过apt方式安装的，一般来说，apache的目录为`/etc/apache2`.
-
-默认的网站根目录为`/var/www/html`。
-
-启动apache的命令：
-
-    sudo service apache2 start
-
-重启和停止的命令只要把`start`改为`restart`和`stop`就可以了。
-
-### 测试
-测试apache2是否安装成功，在浏览器地址栏内输入`127.0.0.1`或者`(http://localhost/)`，如果页面显示`it works`。那么，apache就安装成功了。
-
-## PHP
-### 安装
-使用以下命令安装：
-
-    sudo apt-get install php5 libapache2-mod-php5
-
-接着根据需要安装PHP其他扩展：
-
-    sudo apt-get install php5-mysql php5-curl php5-gd php5-intl php-pear php5-imagick php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl
-把不需要的扩展删掉即可，每个扩展用空格分离。一般需要安装`php5-mysql  php5-mcrypt php-pear`等扩展。
-
-执行完之后，PHP已经安装完成。使用`phpinfo()`函数来测试PHP是否已经安装成功。
-
-    sudo vim /var/www/html/test.php
-在`test.php`中输入一下代码：
-
-    &lt;?php phpinfo(); ?&gt;
-然后在浏览器中输入`localhost/test.php`来查看，若能成功看到php的配置信息，则说明PHP安装成功。
-
-## MySQL
-### 安装
-使用以下命令安装：
-
-    sudo apt-get install mysql-server-5.5 libapache2-mod-auth-mysql
-安装过程中，会提示你设定MySQL的root用户名的密码。
-
-至此，恭喜你，LAMP环境已经安装完成。
-
-## phpmyadmin
-### 安装
-使用一下命令安装：
-
-    sudo apt-get install phpmyadmin
-安装的过程中，有几个东西需要填写或者设置。
-1. 选择服务器软件，这里选择之前安装的apache
-2. 输入之前安装MYSQL的root密码
-3. 设置phpmyadmin的root用户的密码
-
-安装完成后需要将phpmyadmin的配置文件包含到apache的配置中去，否则在浏览器输入`localhost/phpmyadmin`会提示`Not Found`。编辑`apache2.conf`：
-
-    sudo vim /etc/apache2/apahce2.conf
-在文件中的#Include list of ports to listen to段落下面，添加一下行代码：
-
-    Include /etc/phpmyadmin/apache.conf
-重启服务器：
-
-    sudo service apache2 restart
-
-
-除上述方法外，我们还可以建一个链接
-
-    sudo ln -s /usr/share/phpmyadmin/ /var/www/html
-这样，也能访问phpmyadmin了。上面两种方法选其中一个就行了。
---&gt;</content>
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;Apache&quot;&gt;&lt;a href=&quot;#Apache&quot; class=&quot;headerlink&quot; title=&quot;Apache&quot;&gt;&lt;/a&gt;Apache&lt;/h2&gt;&lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;p&gt;使用以下命令安装apache2：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install apache2
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;通过apt方式安装的，一般来说，apache的目录为&lt;code&gt;/etc/apache2&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;默认的网站根目录为&lt;code&gt;/var/www/html&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;启动apache的命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo service apache2 start
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;重启和停止的命令只要把&lt;code&gt;start&lt;/code&gt;改为&lt;code&gt;restart&lt;/code&gt;和&lt;code&gt;stop&lt;/code&gt;就可以了。&lt;/p&gt;
+&lt;h3 id=&quot;测试&quot;&gt;&lt;a href=&quot;#测试&quot; class=&quot;headerlink&quot; title=&quot;测试&quot;&gt;&lt;/a&gt;测试&lt;/h3&gt;&lt;p&gt;测试apache2是否安装成功，在浏览器地址栏内输入&lt;code&gt;127.0.0.1&lt;/code&gt;或者&lt;code&gt;(http://localhost/)&lt;/code&gt;，如果页面显示&lt;code&gt;it works&lt;/code&gt;。那么，apache就安装成功了。&lt;/p&gt;
+&lt;h2 id=&quot;PHP&quot;&gt;&lt;a href=&quot;#PHP&quot; class=&quot;headerlink&quot; title=&quot;PHP&quot;&gt;&lt;/a&gt;PHP&lt;/h2&gt;&lt;h3 id=&quot;安装-1&quot;&gt;&lt;a href=&quot;#安装-1&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;p&gt;使用以下命令安装：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install php5 libapache2-mod-php5
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接着根据需要安装PHP其他扩展：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install php5-mysql php5-curl php5-gd php5-intl php-pear php5-imagick php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;把不需要的扩展删掉即可，每个扩展用空格分离。一般需要安装&lt;code&gt;php5-mysql  php5-mcrypt php-pear&lt;/code&gt;等扩展。&lt;/p&gt;
+&lt;p&gt;执行完之后，PHP已经安装完成。&lt;/p&gt;
+&lt;h3 id=&quot;测试-1&quot;&gt;&lt;a href=&quot;#测试-1&quot; class=&quot;headerlink&quot; title=&quot;测试&quot;&gt;&lt;/a&gt;测试&lt;/h3&gt;&lt;p&gt;使用&lt;code&gt;phpinfo()&lt;/code&gt;函数来测试PHP是否已经安装成功。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo vim /var/www/html/test.php
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在&lt;code&gt;test.php&lt;/code&gt;中输入一下代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?php phpinfo(); ?&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后在浏览器中输入&lt;code&gt;localhost/test.php&lt;/code&gt;来查看，若能成功看到php的配置信息，则说明PHP安装成功。&lt;/p&gt;
+&lt;h2 id=&quot;MySQL&quot;&gt;&lt;a href=&quot;#MySQL&quot; class=&quot;headerlink&quot; title=&quot;MySQL&quot;&gt;&lt;/a&gt;MySQL&lt;/h2&gt;&lt;h3 id=&quot;安装-2&quot;&gt;&lt;a href=&quot;#安装-2&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;p&gt;使用以下命令安装：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install mysql-server-5.5 libapache2-mod-auth-mysql
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;安装过程中，会提示你设定MySQL的root用户名的密码。&lt;/p&gt;
+&lt;h3 id=&quot;测试-2&quot;&gt;&lt;a href=&quot;#测试-2&quot; class=&quot;headerlink&quot; title=&quot;测试&quot;&gt;&lt;/a&gt;测试&lt;/h3&gt;&lt;p&gt;Ctrl+Alt+T打开终端&lt;br&gt;输入一下命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;`mysql -uroot -p`
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;回车后输入你刚才设置的密码。(-u 后面跟的是用户名，我的同户名是root)&lt;br&gt;如果能成功进入，则安装成功。&lt;br&gt;至此，恭喜你，LAMP环境已经安装完成。&lt;/p&gt;
+&lt;h2 id=&quot;phpmyadmin&quot;&gt;&lt;a href=&quot;#phpmyadmin&quot; class=&quot;headerlink&quot; title=&quot;phpmyadmin&quot;&gt;&lt;/a&gt;phpmyadmin&lt;/h2&gt;&lt;h3 id=&quot;安装-3&quot;&gt;&lt;a href=&quot;#安装-3&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;p&gt;使用一下命令安装：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install phpmyadmin
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;安装的过程中，有几个东西需要填写或者设置。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;选择服务器软件，这里选择之前安装的apache&lt;/li&gt;
+&lt;li&gt;输入之前安装MYSQL的root密码&lt;/li&gt;
+&lt;li&gt;设置phpmyadmin的root用户的密码&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;安装完成后需要将phpmyadmin的配置文件包含到apache的配置中去，否则在浏览器输入&lt;code&gt;localhost/phpmyadmin&lt;/code&gt;会提示&lt;code&gt;Not Found&lt;/code&gt;。编辑&lt;code&gt;apache2.conf&lt;/code&gt;：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo vim /etc/apache2/apahce2.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在文件中的#Include list of ports to listen to段落下面，添加一下行代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Include /etc/phpmyadmin/apache.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;重启服务器：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo service apache2 restart
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;除上述方法外，我们还可以建一个链接&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo ln -s /usr/share/phpmyadmin/ /var/www/html
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这样，也能访问phpmyadmin了。上面两种方法选其中一个就行了。&lt;/p&gt;
+&lt;h3 id=&quot;测试-3&quot;&gt;&lt;a href=&quot;#测试-3&quot; class=&quot;headerlink&quot; title=&quot;测试&quot;&gt;&lt;/a&gt;测试&lt;/h3&gt;&lt;p&gt;打开浏览器，输入localhost/phpmyadmin&lt;br&gt;能打开，则说明安装成功。&lt;/p&gt;
+</content>
     
     <summary type="html">
     
       &lt;p&gt;之前，每次安装都是乱七八糟的就搞好了，然后并没有一个好的完整的记录过程，所以导致之后弄的时候，有时候很顺，有时候就问题一大堆。&lt;br&gt;所以，这次就打算把整个过程记下来，一来供以后参考，二来可以与其他人讨论一下。&lt;/p&gt;
-&lt;!-- more
-## Apache
-### 安装
-
     
     </summary>
     
@@ -209,7 +151,7 @@ PS：在不配置的情况下，默认使用公共ID，无法下载，无法看�
     <link href="http://limaolong.cn/2015/06/13/simple_exercises_of_github/"/>
     <id>http://limaolong.cn/2015/06/13/simple_exercises_of_github/</id>
     <published>2015-06-12T16:00:00.000Z</published>
-    <updated>2016-03-08T12:57:40.357Z</updated>
+    <updated>2016-03-17T06:27:31.891Z</updated>
     
     <content type="html">&lt;h2 id=&quot;如何使用GitHub&quot;&gt;&lt;a href=&quot;#如何使用GitHub&quot; class=&quot;headerlink&quot; title=&quot;如何使用GitHub&quot;&gt;&lt;/a&gt;如何使用GitHub&lt;/h2&gt;&lt;p&gt;目标：&lt;/p&gt;
 &lt;ul&gt;
@@ -218,102 +160,76 @@ PS：在不配置的情况下，默认使用公共ID，无法下载，无法看�
 &lt;li&gt;了解如何将修改过的文件提交到代码库&lt;/li&gt;
 &lt;li&gt;开启并合并一个上传请求&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- more
-### 创建代码库（远程仓库/repository）
-1. 点击右上角的+号下拉菜单，选择创建代码库（`New repository`）。
-2. 输入仓库的名字，比如hello-world。
-3. 对仓库进行简短的描述。
-4. 选择仓库类型，目前公开的是免费的，私有的需要付费，视个人情况而定。
-5. 接着选择用README文件初始化仓库，同时根据需要选择代码的证书。
-如下图：
-
-![create repository][1]
-
-### 创建分支
-一般一个项目开发，最起码有4个分支：产品分支(`product`)、测试分支(`test`)、开发分支(`development`)、主分支(`master`).
-如果需要开发几个大的功能，而且是团队开发，那么需要在dev的基础上创建自己的分支，即创建一个dev分支的复制。
-如下图，展示了feature分支完整的生命周期。
-
-![分支生命周期][2]
-
-现在，我们只演示一下如何在master分支上创建分支。
-1. 进入刚才创建的代码库的页面。
-2. 点击分支的下拉框，在搜索框内输入新的分支名字，如readme-edits
-3. 点击创建分支
-如下图：
-
-![此处输入图片的描述][3]
-
-### 修改代码并提交(`commit`)修改
-现在，我们的代码库有2个分支：master和readme-edits。
-我们在readme-edits分支上，对本来的readme文件进行修改，然后将改动提交上去。
-每次提交修改的时候，我们需要输入一些备注，这样可以让别人看到你修改的目的和内容等等，同时也帮助自己以后对项目的复看(`review`)。
-接下来，我们进行文件修改和提交：
-1. 点击打开README.md的文件
-2. 点击右侧的修改按钮(铅笔形状)，进入修改页面。
-3. 对文件进行修改
-4. 之后，输入备注
-5. 选择是否创建新的分支，还是提交到当前分支，默认提交到当前分支
-6. 点击提交修改
-具体操作如下图：
-
-![此处输入图片的描述][4]
-
-### 建立一个上传请求(`Pull Request`)
-经过上述步骤后，我们想比较master进行，进行了修改，而且提交了修改，这时候，我们需要发送一次请求，将修改合并到master分支上。
-现在，来创建一个上传请求：
-1. 点击`Pull Request`标签，进入页面，点击创建新请求(`New pull request`)
-
-![此处输入图片的描述][5]
-
-2. 选择创建的分支，与master分支，进行比较
-
-![此处输入图片的描述][6]
-
-3. 浏览你做的修改，并和master分支进行比较，确保是你想要提交的东西。
-
-![此处输入图片的描述][7]
-
-4. 当你确保这些修改是你想要提交的修改，点击绿色的创建上传按钮。
-
-![此处输入图片的描述][8]
-
-5. 给你的这次请求写一个标题，同时写简短的描述
-
-![此处输入图片的描述][9]
-
-### 允许请求，合并代码
-最后，将readme-edits分支合并到master分支：
-1. 点击合并请求按钮，将分支合并到master分支
-2. 点击确认合并
-3. 当合并完成后，就可以删除readme-edits分支了。
-
-![此处输入图片的描述][10]
-
-![此处输入图片的描述][11]
-
-至此，已经完成了Github的一些基本操作。
-
-本文原文：https://guides.github.com/activities/hello-world/
-  [1]: https://guides.github.com/activities/hello-world/create-new-repo.png
-  [2]: https://guides.github.com/activities/hello-world/branching.png
-  [3]: https://guides.github.com/activities/hello-world/readme-edits.gif
-  [4]: https://guides.github.com/activities/hello-world/commit.png
-  [5]: https://guides.github.com/activities/hello-world/pr-tab.gif
-  [6]: https://guides.github.com/activities/hello-world/pick-branch.png
-  [7]: https://guides.github.com/activities/hello-world/diff.png
-  [8]: https://guides.github.com/activities/hello-world/create-pr.png
-  [9]: https://guides.github.com/activities/hello-world/pr-form.png
-  [10]: https://guides.github.com/activities/hello-world/merge-button.png
-  [11]: https://guides.github.com/activities/hello-world/delete-button.png
---&gt;</content>
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;创建代码库（远程仓库-repository）&quot;&gt;&lt;a href=&quot;#创建代码库（远程仓库-repository）&quot; class=&quot;headerlink&quot; title=&quot;创建代码库（远程仓库/repository）&quot;&gt;&lt;/a&gt;创建代码库（远程仓库/repository）&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;点击右上角的+号下拉菜单，选择创建代码库（&lt;code&gt;New repository&lt;/code&gt;）。&lt;/li&gt;
+&lt;li&gt;输入仓库的名字，比如hello-world。&lt;/li&gt;
+&lt;li&gt;对仓库进行简短的描述。&lt;/li&gt;
+&lt;li&gt;选择仓库类型，目前公开的是免费的，私有的需要付费，视个人情况而定。&lt;/li&gt;
+&lt;li&gt;接着选择用README文件初始化仓库，同时根据需要选择代码的证书。&lt;br&gt;如下图：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://guides.github.com/activities/hello-world/create-new-repo.png&quot; alt=&quot;create repository&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;创建分支&quot;&gt;&lt;a href=&quot;#创建分支&quot; class=&quot;headerlink&quot; title=&quot;创建分支&quot;&gt;&lt;/a&gt;创建分支&lt;/h3&gt;&lt;p&gt;一般一个项目开发，最起码有4个分支：产品分支(&lt;code&gt;product&lt;/code&gt;)、测试分支(&lt;code&gt;test&lt;/code&gt;)、开发分支(&lt;code&gt;development&lt;/code&gt;)、主分支(&lt;code&gt;master&lt;/code&gt;).&lt;br&gt;如果需要开发几个大的功能，而且是团队开发，那么需要在dev的基础上创建自己的分支，即创建一个dev分支的复制。&lt;br&gt;如下图，展示了feature分支完整的生命周期。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://guides.github.com/activities/hello-world/branching.png&quot; alt=&quot;分支生命周期&quot;&gt;&lt;/p&gt;
+&lt;p&gt;现在，我们只演示一下如何在master分支上创建分支。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;进入刚才创建的代码库的页面。&lt;/li&gt;
+&lt;li&gt;点击分支的下拉框，在搜索框内输入新的分支名字，如readme-edits&lt;/li&gt;
+&lt;li&gt;点击创建分支&lt;br&gt;如下图：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://guides.github.com/activities/hello-world/readme-edits.gif&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;修改代码并提交-commit-修改&quot;&gt;&lt;a href=&quot;#修改代码并提交-commit-修改&quot; class=&quot;headerlink&quot; title=&quot;修改代码并提交(commit)修改&quot;&gt;&lt;/a&gt;修改代码并提交(&lt;code&gt;commit&lt;/code&gt;)修改&lt;/h3&gt;&lt;p&gt;现在，我们的代码库有2个分支：master和readme-edits。&lt;br&gt;我们在readme-edits分支上，对本来的readme文件进行修改，然后将改动提交上去。&lt;br&gt;每次提交修改的时候，我们需要输入一些备注，这样可以让别人看到你修改的目的和内容等等，同时也帮助自己以后对项目的复看(&lt;code&gt;review&lt;/code&gt;)。&lt;br&gt;接下来，我们进行文件修改和提交：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;点击打开README.md的文件&lt;/li&gt;
+&lt;li&gt;点击右侧的修改按钮(铅笔形状)，进入修改页面。&lt;/li&gt;
+&lt;li&gt;对文件进行修改&lt;/li&gt;
+&lt;li&gt;之后，输入备注&lt;/li&gt;
+&lt;li&gt;选择是否创建新的分支，还是提交到当前分支，默认提交到当前分支&lt;/li&gt;
+&lt;li&gt;点击提交修改&lt;br&gt;具体操作如下图：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://guides.github.com/activities/hello-world/commit.png&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;建立一个上传请求-Pull-Request&quot;&gt;&lt;a href=&quot;#建立一个上传请求-Pull-Request&quot; class=&quot;headerlink&quot; title=&quot;建立一个上传请求(Pull Request)&quot;&gt;&lt;/a&gt;建立一个上传请求(&lt;code&gt;Pull Request&lt;/code&gt;)&lt;/h3&gt;&lt;p&gt;经过上述步骤后，我们想比较master进行，进行了修改，而且提交了修改，这时候，我们需要发送一次请求，将修改合并到master分支上。&lt;br&gt;现在，来创建一个上传请求：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;点击&lt;code&gt;Pull Request&lt;/code&gt;标签，进入页面，点击创建新请求(&lt;code&gt;New pull request&lt;/code&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://guides.github.com/activities/hello-world/pr-tab.gif&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;选择创建的分支，与master分支，进行比较&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://guides.github.com/activities/hello-world/pick-branch.png&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;浏览你做的修改，并和master分支进行比较，确保是你想要提交的东西。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://guides.github.com/activities/hello-world/diff.png&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;当你确保这些修改是你想要提交的修改，点击绿色的创建上传按钮。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://guides.github.com/activities/hello-world/create-pr.png&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;给你的这次请求写一个标题，同时写简短的描述&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://guides.github.com/activities/hello-world/pr-form.png&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;允许请求，合并代码&quot;&gt;&lt;a href=&quot;#允许请求，合并代码&quot; class=&quot;headerlink&quot; title=&quot;允许请求，合并代码&quot;&gt;&lt;/a&gt;允许请求，合并代码&lt;/h3&gt;&lt;p&gt;最后，将readme-edits分支合并到master分支：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;点击合并请求按钮，将分支合并到master分支&lt;/li&gt;
+&lt;li&gt;点击确认合并&lt;/li&gt;
+&lt;li&gt;当合并完成后，就可以删除readme-edits分支了。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://guides.github.com/activities/hello-world/merge-button.png&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://guides.github.com/activities/hello-world/delete-button.png&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
+&lt;p&gt;至此，已经完成了Github的一些基本操作。&lt;/p&gt;
+&lt;p&gt;本文原文：&lt;a href=&quot;https://guides.github.com/activities/hello-world/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://guides.github.com/activities/hello-world/&lt;/a&gt;&lt;/p&gt;
+</content>
     
     <summary type="html">
     
       &lt;h2 id=&quot;如何使用GitHub&quot;&gt;&lt;a href=&quot;#如何使用GitHub&quot; class=&quot;headerlink&quot; title=&quot;如何使用GitHub&quot;&gt;&lt;/a&gt;如何使用GitHub&lt;/h2&gt;&lt;p&gt;目标：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;了解如何创建和使用代码库&lt;/li&gt;
-&lt;li
+&lt;li&gt;了解创建并管理分支&lt;/li&gt;
+&lt;li&gt;了解如何将修改过的文件提交到代码库&lt;/li&gt;
+&lt;li&gt;开启并合并一个上传请求&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     

@@ -65,7 +65,7 @@
 <meta property="og:url" content="http://limaolong.cn/2015/07/16/lamp/index.html">
 <meta property="og:site_name" content="Green's Blog">
 <meta property="og:description" content="之前，每次安装都是乱七八糟的就搞好了，然后并没有一个好的完整的记录过程，所以导致之后弄的时候，有时候很顺，有时候就问题一大堆。所以，这次就打算把整个过程记下来，一来供以后参考，二来可以与其他人讨论一下。">
-<meta property="og:updated_time" content="2016-03-17T06:27:17.243Z">
+<meta property="og:updated_time" content="2016-03-17T07:00:45.349Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu下mysql，php以及apache的安装和配置">
 <meta name="twitter:description" content="之前，每次安装都是乱七八糟的就搞好了，然后并没有一个好的完整的记录过程，所以导致之后弄的时候，有时候很顺，有时候就问题一大堆。所以，这次就打算把整个过程记下来，一来供以后参考，二来可以与其他人讨论一下。">
@@ -313,7 +313,8 @@
 </code></pre><p>接着根据需要安装PHP其他扩展：</p>
 <pre><code>sudo apt-get install php5-mysql php5-curl php5-gd php5-intl php-pear php5-imagick php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl
 </code></pre><p>把不需要的扩展删掉即可，每个扩展用空格分离。一般需要安装<code>php5-mysql  php5-mcrypt php-pear</code>等扩展。</p>
-<p>执行完之后，PHP已经安装完成。使用<code>phpinfo()</code>函数来测试PHP是否已经安装成功。</p>
+<p>执行完之后，PHP已经安装完成。</p>
+<h3 id="测试-1"><a href="#测试-1" class="headerlink" title="测试"></a>测试</h3><p>使用<code>phpinfo()</code>函数来测试PHP是否已经安装成功。</p>
 <pre><code>sudo vim /var/www/html/test.php
 </code></pre><p>在<code>test.php</code>中输入一下代码：</p>
 <pre><code>&lt;?php phpinfo(); ?&gt;
@@ -321,7 +322,9 @@
 <h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><h3 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h3><p>使用以下命令安装：</p>
 <pre><code>sudo apt-get install mysql-server-5.5 libapache2-mod-auth-mysql
 </code></pre><p>安装过程中，会提示你设定MySQL的root用户名的密码。</p>
-<p>至此，恭喜你，LAMP环境已经安装完成。</p>
+<h3 id="测试-2"><a href="#测试-2" class="headerlink" title="测试"></a>测试</h3><p>Ctrl+Alt+T打开终端<br>输入一下命令</p>
+<pre><code>`mysql -uroot -p`
+</code></pre><p>回车后输入你刚才设置的密码。(-u 后面跟的是用户名，我的同户名是root)<br>如果能成功进入，则安装成功。<br>至此，恭喜你，LAMP环境已经安装完成。</p>
 <h2 id="phpmyadmin"><a href="#phpmyadmin" class="headerlink" title="phpmyadmin"></a>phpmyadmin</h2><h3 id="安装-3"><a href="#安装-3" class="headerlink" title="安装"></a>安装</h3><p>使用一下命令安装：</p>
 <pre><code>sudo apt-get install phpmyadmin
 </code></pre><p>安装的过程中，有几个东西需要填写或者设置。</p>
@@ -339,6 +342,7 @@
 </code></pre><p>除上述方法外，我们还可以建一个链接</p>
 <pre><code>sudo ln -s /usr/share/phpmyadmin/ /var/www/html
 </code></pre><p>这样，也能访问phpmyadmin了。上面两种方法选其中一个就行了。</p>
+<h3 id="测试-3"><a href="#测试-3" class="headerlink" title="测试"></a>测试</h3><p>打开浏览器，输入localhost/phpmyadmin<br>能打开，则说明安装成功。</p>
 
       
     </div>
@@ -590,7 +594,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Apache"><span class="nav-number">1.</span> <span class="nav-text">Apache</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试"><span class="nav-number">1.2.</span> <span class="nav-text">测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP"><span class="nav-number">2.</span> <span class="nav-text">PHP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-1"><span class="nav-number">2.1.</span> <span class="nav-text">安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL"><span class="nav-number">3.</span> <span class="nav-text">MySQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-2"><span class="nav-number">3.1.</span> <span class="nav-text">安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#phpmyadmin"><span class="nav-number">4.</span> <span class="nav-text">phpmyadmin</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-3"><span class="nav-number">4.1.</span> <span class="nav-text">安装</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Apache"><span class="nav-number">1.</span> <span class="nav-text">Apache</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试"><span class="nav-number">1.2.</span> <span class="nav-text">测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP"><span class="nav-number">2.</span> <span class="nav-text">PHP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-1"><span class="nav-number">2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试-1"><span class="nav-number">2.2.</span> <span class="nav-text">测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL"><span class="nav-number">3.</span> <span class="nav-text">MySQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-2"><span class="nav-number">3.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试-2"><span class="nav-number">3.2.</span> <span class="nav-text">测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#phpmyadmin"><span class="nav-number">4.</span> <span class="nav-text">phpmyadmin</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-3"><span class="nav-number">4.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试-3"><span class="nav-number">4.2.</span> <span class="nav-text">测试</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
