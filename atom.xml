@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://limaolong.cn/"/>
-  <updated>2016-03-17T06:26:01.979Z</updated>
+  <updated>2016-03-27T08:26:11.160Z</updated>
   <id>http://limaolong.cn/</id>
   
   <author>
@@ -16,9 +16,85 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>【Ubuntu学习】Linux中alias的使用</title>
+    <link href="http://limaolong.cn/2015/10/25/ubuntu-how_to_use_alias/"/>
+    <id>http://limaolong.cn/2015/10/25/ubuntu-how_to_use_alias/</id>
+    <published>2015-10-24T16:00:00.000Z</published>
+    <updated>2016-03-27T08:26:11.160Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;如果你不知道如何使用linux中的alias，那么看了这篇文章，你应该就能够了解如何使用了。&lt;br&gt;如果已经知道了如何使用，那么可以给我提出一些建议或意见。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;为何要使用alias&quot;&gt;&lt;a href=&quot;#为何要使用alias&quot; class=&quot;headerlink&quot; title=&quot;为何要使用alias&quot;&gt;&lt;/a&gt;为何要使用alias&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;可以简化命令。&lt;br&gt;在平常开发中，我们有时候会重复多次输入一条或多条复杂的命令。这样会很浪费时间，所以我们可以将一连串的命令简化成一个或几个简单的单词。如：&lt;br&gt;&lt;code&gt;gedit /etc/httpd/conf/httpd.conf&lt;/code&gt;&lt;br&gt;使用alias，建立&lt;code&gt;alias edithttp=&amp;quot;gedit /etc/httpd/conf/httpd.conf&amp;quot;&lt;/code&gt;&lt;br&gt;，我们只需要输入一个简单的单词：&lt;code&gt;edithttp&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;修改系统默认的命令&lt;br&gt;有时候，不同版本的系统默认命令有区别，我们可以建立一个跟系统命令同名的alias来覆盖系统的命令。&lt;br&gt;如：&lt;code&gt;alias ls=&amp;quot;ls -a&amp;quot;&lt;/code&gt;，这样ls就可以显示包括隐藏的文件了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;纠正拼写错误&lt;br&gt;有时候，由于手癌，会打错一些单词，而且还坑爹的发现不了，所以我们可以建立如下&lt;code&gt;alias pdw=&amp;#39;pwd&amp;#39;&lt;/code&gt;&lt;br&gt;这样，当打错的时候，也能正常执行命令了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使命令更安全&lt;br&gt;我们可以将&lt;code&gt;rm&lt;/code&gt;,&lt;code&gt;cp&lt;/code&gt;等命令修改为交互的命令，这样不至于错手删了或者覆盖了一些重要的文件。如：&lt;code&gt;alias rm=&amp;#39;rm -i&amp;#39;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;可以统一不同字符界面的命令&lt;br&gt;如在DOS界面下，&lt;code&gt;dir&lt;/code&gt;的作用相当于&lt;code&gt;ls&lt;/code&gt;，&lt;code&gt;del&lt;/code&gt;相当于&lt;code&gt;rm -i&lt;/code&gt;。所以可以建立如下：&lt;br&gt;&lt;code&gt;alias dir=&amp;#39;ls&amp;#39;&lt;/code&gt;&lt;br&gt;&lt;code&gt;alias del=&amp;#39;rm&amp;#39;&lt;/code&gt;&lt;br&gt;……&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;如何使用alias&quot;&gt;&lt;a href=&quot;#如何使用alias&quot; class=&quot;headerlink&quot; title=&quot;如何使用alias&quot;&gt;&lt;/a&gt;如何使用alias&lt;/h3&gt;&lt;p&gt;使用alias的基础语法如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alias [name=&amp;quot;value&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注意：这里的等号两边&lt;strong&gt;不能加空格&lt;/strong&gt;，一些人习惯在等号两边加空格，加了就不行了。&lt;/p&gt;
+&lt;h4 id=&quot;短暂使用&quot;&gt;&lt;a href=&quot;#短暂使用&quot; class=&quot;headerlink&quot; title=&quot;短暂使用&quot;&gt;&lt;/a&gt;短暂使用&lt;/h4&gt;&lt;p&gt;如果只是想暂时使用，则只需要打开终端根据语法输入即可，如：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alias p=&amp;quot;pwd&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;则使用p命令即可显示当前目录。&lt;br&gt;在终端中直接使用alias的作用范围仅限当前会话，图形界面下即仅限&lt;strong&gt;当前终端&lt;/strong&gt;。&lt;/p&gt;
+&lt;h4 id=&quot;长期使用&quot;&gt;&lt;a href=&quot;#长期使用&quot; class=&quot;headerlink&quot; title=&quot;长期使用&quot;&gt;&lt;/a&gt;长期使用&lt;/h4&gt;&lt;p&gt;如果需要长期使用alias，则需要修改相应的配置文件。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;某一个用户长期使用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;进入home目录下那个用户的文件夹，修改.bashrc文件&lt;br&gt; 一般来说可以使用如下命令：&lt;code&gt;vim ~/.bashrc&lt;/code&gt;&lt;br&gt;如果你用的是其他的shell,就编辑相应的配置文件。&lt;br&gt;如我用的是&lt;code&gt;zsh&lt;/code&gt;,就编辑&lt;code&gt;.zshrc&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;跳转到文件末尾&lt;br&gt; 使用&lt;code&gt;:$&lt;/code&gt;命令，可以跳转到文件末尾，按I进入insert模式。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;添加alias&lt;br&gt; 在linux中，链接多条命令的一个简单的方法就是使用&amp;amp;&amp;amp;。这个操作符可以让一系列命令连起来执行，并且只有前一个命令成功执行时，才执行后一个命令。&lt;br&gt;所以，你可以将上面的命令写成如下:&lt;code&gt;alias lsl=&amp;quot;cd .. &amp;amp;&amp;amp; ls -l&amp;quot;&lt;/code&gt;&lt;br&gt;只需要在文件最后添加这行代码就可以了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;保存退出&lt;br&gt;按ESC退出insert模式，输入&lt;code&gt;:wq&lt;/code&gt;，回车，保存退出。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;重启bash&lt;br&gt;关掉终端，再打开就行了，也可以输入&lt;code&gt;source ~/.bashrc&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;所有用户长期使用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;使用root登陆，修改&lt;code&gt;/etc/bash.bashrc&lt;/code&gt;（我用的zsh，配置文件在&lt;code&gt;/etc/zsh/zshrc&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;其他同上&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;配置完之后，就可以使用你的简写的命令了～！&lt;/p&gt;
+&lt;h3 id=&quot;取消alias&quot;&gt;&lt;a href=&quot;#取消alias&quot; class=&quot;headerlink&quot; title=&quot;取消alias&quot;&gt;&lt;/a&gt;取消alias&lt;/h3&gt;&lt;p&gt;取消alias的基本语法如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;unalias name(s)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;unalias除了可以取消当前会话的alias，也可以取消在配置文件中的alias。&lt;br&gt;如果在当前会话使用，则作用范围也仅限当前会话（当前终端）。&lt;br&gt;如果想永久移除配置文件中的alias，只需要把语句删掉，重启终端或重新读取配置文件即可。&lt;br&gt;参考自：&lt;a href=&quot;http://www.linfo.org/alias.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.linfo.org/alias.html&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;如果你不知道如何使用linux中的alias，那么看了这篇文章，你应该就能够了解如何使用了。&lt;br&gt;如果已经知道了如何使用，那么可以给我提出一些建议或意见。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="ubuntu" scheme="http://limaolong.cn/categories/ubuntu/"/>
+    
+    
+      <category term="alias" scheme="http://limaolong.cn/tags/alias/"/>
+    
+      <category term="ubuntu" scheme="http://limaolong.cn/tags/ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
     <title>如何科学的上网</title>
-    <link href="http://limaolong.cn/2015/09/18/how%20to%20FK%20GFW/"/>
-    <id>http://limaolong.cn/2015/09/18/how to FK GFW/</id>
+    <link href="http://limaolong.cn/2015/09/18/how_to_FK_GFW/"/>
+    <id>http://limaolong.cn/2015/09/18/how_to_FK_GFW/</id>
     <published>2015-09-17T16:00:00.000Z</published>
     <updated>2016-03-17T06:26:01.979Z</updated>
     
