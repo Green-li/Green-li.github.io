@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://limaolong.cn/"/>
-  <updated>2016-03-27T08:26:11.160Z</updated>
+  <updated>2016-05-12T07:42:32.804Z</updated>
   <id>http://limaolong.cn/</id>
   
   <author>
@@ -14,6 +14,276 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Ubuntu学习】Linux多进程通信之消息队列</title>
+    <link href="http://limaolong.cn/2016/04/02/ipc_message_queue/"/>
+    <id>http://limaolong.cn/2016/04/02/ipc_message_queue/</id>
+    <published>2016-04-01T16:00:00.000Z</published>
+    <updated>2016-05-12T07:42:32.804Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;在操作系统课中，需要进行进程间通信的实验，我就写了一个小的程序，通过消息队列进行通信。除了消息队列外，还有共享内存，管道，信号等通信方式。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;【Linux学习】多进程通信之消息队列&quot;&gt;&lt;a href=&quot;#【Linux学习】多进程通信之消息队列&quot; class=&quot;headerlink&quot; title=&quot;【Linux学习】多进程通信之消息队列&quot;&gt;&lt;/a&gt;【Linux学习】多进程通信之消息队列&lt;/h2&gt;&lt;h3 id=&quot;什么是消息队列&quot;&gt;&lt;a href=&quot;#什么是消息队列&quot; class=&quot;headerlink&quot; title=&quot;什么是消息队列&quot;&gt;&lt;/a&gt;什么是消息队列&lt;/h3&gt;&lt;p&gt;摘自维基百科：&lt;br&gt;在计算机科学中，消息队列（英语：Message queue）是一种进程间通信或同一进程的不同线程间的通信方式，它使用队列（queue）来处理一系列的输入（通常是来自用户）。消息队列提供了异步的通信协议，每一个贮列中的纪录包含详细说明的数据，包含发生的时间，输入设备的种类，以及特定的输入参数，也就是说：消息的发送者和接收者不需要同时与消息队列互交。消息会保存在队列中，直到接收者取回它。&lt;/p&gt;
+&lt;p&gt;简单点，就是可以实现异步通信的进程间或同一线程间的通信方式&lt;/p&gt;
+&lt;h3 id=&quot;消息队列部分函数介绍&quot;&gt;&lt;a href=&quot;#消息队列部分函数介绍&quot; class=&quot;headerlink&quot; title=&quot;消息队列部分函数介绍&quot;&gt;&lt;/a&gt;消息队列部分函数介绍&lt;/h3&gt;&lt;p&gt;英语水平较高者，请看： &lt;a href=&quot;http://linux.die.net/man/2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://linux.die.net/man/2&lt;/a&gt; 下的msgget,msgsnd,msgrcv,msgctl等函数。&lt;/p&gt;
+&lt;h4 id=&quot;msgget函数&quot;&gt;&lt;a href=&quot;#msgget函数&quot; class=&quot;headerlink&quot; title=&quot;msgget函数&quot;&gt;&lt;/a&gt;msgget函数&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;函数声明：int msgget(key_t key, int msgflg)&lt;/li&gt;
+&lt;li&gt;函数功能：打开或创建一个消息队列&lt;/li&gt;
+&lt;li&gt;函数变量：&lt;ul&gt;
+&lt;li&gt;key_t key是一个整型变量，一般通过&lt;a href=&quot;http://blog.csdn.net/hwz119/article/details/1613601&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ftok函数&lt;/a&gt;获得。&lt;/li&gt;
+&lt;li&gt;int msgflg是一个控制变量，可以取IPC_CREAT和IPC_EXCL&lt;ul&gt;
+&lt;li&gt;仅使用IPC_CREAT，如果用key唯一标识消息队列（以下同）不存在，则创建新队列；如果队列存在，则打开队列，函数执行成功则返回队列的id。&lt;/li&gt;
+&lt;li&gt;仅使用IPC_EXCL，若队列存在，则打开队列。若队列不存在，则函数执行失败，同时错误为&lt;code&gt;ENOENT&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;同时使用IPC_CREAT和IPC_EXCL，如果队列不存在，则创建新队列，若队列存在，则函数返回-1，同时错误为&lt;code&gt;EEXIST&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;标志使用&lt;code&gt;|&lt;/code&gt;来相连，同时可以和系统权限相或，如&lt;code&gt;IPC_CREAT|0666&lt;/code&gt;，数字表示的权限同linux。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;函数返回值：&lt;ul&gt;
+&lt;li&gt;成功返回消息队列的唯一标识符&lt;/li&gt;
+&lt;li&gt;失败则返回-1，同时将错误类型保存进errno变量中。（&lt;a href=&quot;http://blog.csdn.net/kofiory/article/details/5790409&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;errno数值对应错误&lt;/a&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;msgsnd函数&quot;&gt;&lt;a href=&quot;#msgsnd函数&quot; class=&quot;headerlink&quot; title=&quot;msgsnd函数&quot;&gt;&lt;/a&gt;msgsnd函数&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;函数声明：int msgsnd(int msqid, const void *msgp, size_t msgsz, int msgflg)&lt;/li&gt;
+&lt;li&gt;函数功能：用来向消息队列发送消息，调用该函数的进程需要队列的写&lt;code&gt;w&lt;/code&gt;权限&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;函数变量：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;int msqid是msgget返回的唯一标识符。&lt;/li&gt;
+&lt;li&gt;const void *msgp是一个指向准备发送的消息的结构体的指针。该结构体需要特定的结构，结构如下：&lt;blockquote&gt;
+&lt;p&gt;struct msgbuf {&lt;br&gt;  long mtype;        //message type, must be &amp;gt; 0&lt;br&gt;  char mtext[256];    // message data&lt;br&gt;};&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;size_t msgsz是用来指明结构体中，mtext的大小（&lt;strong&gt;注意是mtext不是msgbuf&lt;/strong&gt;），是一个非负整数。&lt;/li&gt;
+&lt;li&gt;int msgflg是一个控制变量，用来控制当出现异常（队列满、无队列等）时的事件，一般是传0。详情请见之前说的英文页面。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;函数返回值：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;成功返回0，成功则将结构体中的mtext的拷贝&lt;code&gt;copy&lt;/code&gt;加入消息队列。&lt;/li&gt;
+&lt;li&gt;失败则返回-1，同时将错误类型保存进errno变量中。（&lt;a href=&quot;http://blog.csdn.net/kofiory/article/details/5790409&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;errno数值对应错误&lt;/a&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;msgrcv函数&quot;&gt;&lt;a href=&quot;#msgrcv函数&quot; class=&quot;headerlink&quot; title=&quot;msgrcv函数&quot;&gt;&lt;/a&gt;msgrcv函数&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;函数声明：ssize_t msgrcv(int msqid, void *msgp, size_t msgsz, long msgtyp,&lt;pre&gt;&lt;code&gt;int msgflg)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;函数功能：用来读取消息队列的消息，调用该函数的进程需要队列的读&lt;code&gt;r&lt;/code&gt;权限&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;函数变量：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;int msqid、void *msgp、size_t msgsz意义同msgsnd函数。&lt;/li&gt;
+&lt;li&gt;long msgtyp是一个用来表示消息类型的长整型。&lt;ul&gt;
+&lt;li&gt;若为0，则读取消息队列的第一个消息。&lt;/li&gt;
+&lt;li&gt;若为大于0的数&lt;code&gt;n&lt;/code&gt;，则读取消息队列中类型（即结构体中的&lt;code&gt;mtype&lt;/code&gt;变量）为&lt;code&gt;n&lt;/code&gt;的第一个消息，&lt;strong&gt;不读取其他类型消息&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;int msgflg用处同上，不过可取的值和事件不同，一般取0就可以了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;函数返回值：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;成功返回读取的字节数。&lt;/li&gt;
+&lt;li&gt;失败则返回-1，同时将错误类型保存进errno变量中。（&lt;a href=&quot;http://blog.csdn.net/kofiory/article/details/5790409&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;errno数值对应错误&lt;/a&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;msgctl函数&quot;&gt;&lt;a href=&quot;#msgctl函数&quot; class=&quot;headerlink&quot; title=&quot;msgctl函数&quot;&gt;&lt;/a&gt;msgctl函数&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;函数声明：int msgctl(int msqid, int cmd, struct msqid_ds *buf);&lt;/li&gt;
+&lt;li&gt;函数功能：用来对消息队列进行一些操作&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;函数变量：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;int msqid同上。&lt;/li&gt;
+&lt;li&gt;int cmd用来制定对消息队列执行的操作，可取IPC_STAT、IPC_SET、IPC_RMID、IPC_INFO等。详情请见之前说的英文页面。&lt;/li&gt;
+&lt;li&gt;struct msqid_ds *buf是指向msgid_ds结构的指针，它指向消息队列模式和访问权限等的结构，结构如下： &lt;blockquote&gt;
+&lt;p&gt;struct msqid_ds {&lt;br&gt;  struct ipc_perm msg_perm;     /&lt;em&gt; Ownership and permissions &lt;/em&gt;/&lt;br&gt;  time_t          msg_stime;    /&lt;em&gt; Time of last msgsnd(2) &lt;/em&gt;/&lt;br&gt;  time_t          msg_rtime;    /&lt;em&gt; Time of last msgrcv(2) &lt;/em&gt;/&lt;br&gt;  time_t          msg_ctime;    /&lt;em&gt; Time of last change &lt;/em&gt;/&lt;br&gt;  unsigned long   __msg_cbytes; /* Current number of bytes in&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;queue (nonstandard) */
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  msgqnum_t       msg_qnum;     /* Current number of messages&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;in queue */
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  msglen_t        msg_qbytes;   /* Maximum number of bytes&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;allowed in queue */
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  pid_t           msg_lspid;    /&lt;em&gt; PID of last msgsnd(2) &lt;/em&gt;/&lt;br&gt;  pid_t           msg_lrpid;    /&lt;em&gt; PID of last msgrcv(2) &lt;/em&gt;/&lt;br&gt;};&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;函数返回值：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;成功返回0&lt;/li&gt;
+&lt;li&gt;失败则返回-1，同时将错误类型保存进errno变量中。（&lt;a href=&quot;http://blog.csdn.net/kofiory/article/details/5790409&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;errno数值对应错误&lt;/a&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;使用消息队列&quot;&gt;&lt;a href=&quot;#使用消息队列&quot; class=&quot;headerlink&quot; title=&quot;使用消息队列&quot;&gt;&lt;/a&gt;使用消息队列&lt;/h3&gt;&lt;p&gt;这里使用消息队列实现了一个猜拳的小游戏。&lt;br&gt;代码如下：&lt;/p&gt;
+&lt;h4 id=&quot;msgdata-h&quot;&gt;&lt;a href=&quot;#msgdata-h&quot; class=&quot;headerlink&quot; title=&quot;msgdata.h&quot;&gt;&lt;/a&gt;msgdata.h&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;#ifndef _MSGDATA_H
+#define _MSGDATA_H
+#include &amp;lt;sys/types.h&amp;gt;
+#include &amp;lt;sys/ipc.h&amp;gt;
+#include &amp;lt;sys/msg.h&amp;gt;
+#include &amp;lt;errno.h&amp;gt; 
+#include &amp;lt;unistd.h&amp;gt;  
+#include &amp;lt;stdlib.h&amp;gt;  
+#include &amp;lt;stdio.h&amp;gt;  
+#include &amp;lt;string.h&amp;gt;  
+
+typedef struct  msgbuf  
+{  
+    long    mtype;  
+    char    mdata[256];  
+}MSGBUF;  
+#endif
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;referee-c&quot;&gt;&lt;a href=&quot;#referee-c&quot; class=&quot;headerlink&quot; title=&quot;referee.c&quot;&gt;&lt;/a&gt;referee.c&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;#include &amp;quot;msgdata.h&amp;quot;
+
+int main(void)  
+{
+    int     msgid,res;
+    key_t   msgkey;  
+    char msg[3][20] = {&amp;quot;剪刀&amp;quot;,&amp;quot;石头&amp;quot;,&amp;quot;布&amp;quot;};
+    int p1,p2;
+
+    MSGBUF msgdata , *p;
+    p = &amp;amp;msgdata;
+
+    msgkey = ftok ( &amp;quot;/home/green&amp;quot; , 1);
+    if(msgkey == -1)  
+    {  
+        fprintf(stderr, &amp;quot;ftok failed with error: %d\n&amp;quot;, errno);  
+        exit(EXIT_FAILURE);  
+    }
+
+    msgid = msgget( msgkey , IPC_CREAT | 0666 ) ;              
+    if(msgid == -1)  
+    {  
+        fprintf(stderr, &amp;quot;msgget failed with error: %d\n&amp;quot;, errno);  
+        exit(EXIT_FAILURE);  
+    }
+
+    while(1)  
+    {    
+        p1 = -1;
+        p2 = -1;
+        res = -1; 
+        while(1)
+        {
+            res = msgrcv( msgid , p , sizeof(p-&amp;gt;mdata) , 1 , 0); 
+            if(res == -1)
+            {
+                fprintf(stderr, &amp;quot;msgrcv failed with error: %d\n&amp;quot;, errno);
+            }else
+            {
+                p1 = p-&amp;gt;mdata[0] - &amp;apos;0&amp;apos;;
+                printf(&amp;quot;Player one gives %s \n&amp;quot;, msg[p1-1]);
+            }
+
+            res = msgrcv( msgid , p , sizeof(p-&amp;gt;mdata) , 2, 0 );
+            if(res == -1)    /*读奇数消息*/  
+            {
+                fprintf(stderr, &amp;quot;msgrcv failed with error: %d\n&amp;quot;, errno);
+            }else
+            {
+                p2 = p-&amp;gt;mdata[0] - &amp;apos;0&amp;apos;;
+                printf(&amp;quot;Player two gives %s \n&amp;quot;,msg[p2-1]);
+            }
+
+            if(p1 &amp;gt; 0 &amp;amp;&amp;amp; p2 &amp;gt; 0)
+            {
+                break;
+            }
+        } 
+
+        if(p1 == 1 &amp;amp;&amp;amp; p2 == 3)
+        {
+            printf(&amp;quot;Player one wins!\n&amp;quot;);
+        }else if(p1 == 3 &amp;amp;&amp;amp; p2 == 1)
+        {
+            printf(&amp;quot;Player two wins!\n&amp;quot;);
+        }else if(p1 == p2)
+        {
+            printf(&amp;quot;This is tie game!\n&amp;quot;);
+        }else if(p1 &amp;gt; p2)
+        {
+            printf(&amp;quot;Player one wins!\n&amp;quot;);
+        }else{
+            printf(&amp;quot;Player two wins!\n&amp;quot;);
+        }
+
+        p1 = -1;
+        p2 = -1;
+    }  
+    return 0;  
+}  
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;player1-c&quot;&gt;&lt;a href=&quot;#player1-c&quot; class=&quot;headerlink&quot; title=&quot;player1.c&quot;&gt;&lt;/a&gt;player1.c&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;#include &amp;quot;msgdata.h&amp;quot;
+int main(void)
+{
+    int     msgid,res;  
+    key_t   msgkey;  
+    MSGBUF msgdata , *p ;                                            
+    p = &amp;amp;msgdata;
+
+    msgkey = ftok ( &amp;quot;/home/green&amp;quot; , 1); 
+    if(msgkey == -1)  
+    {  
+        fprintf(stderr, &amp;quot;ftok failed with error: %d\n&amp;quot;, errno);  
+        exit(EXIT_FAILURE);  
+    }
+
+    msgid = msgget( msgkey , IPC_CREAT | 0666 ) ;              
+    if(msgid == -1)  
+    {  
+        fprintf(stderr, &amp;quot;msgget failed with error: %d\n&amp;quot;, errno);  
+        exit(EXIT_FAILURE);  
+    }
+
+    while(1)  
+    {  
+        while(1)
+        {
+            printf(&amp;quot;请输入数字(1.剪刀2.石头3.布)：\n  &amp;quot;);  
+            fflush( stdin );                              
+            gets( p-&amp;gt;mdata );                             
+            if(p-&amp;gt;mdata[0] &amp;gt;&amp;apos;0&amp;apos; &amp;amp;&amp;amp; p-&amp;gt;mdata[0] &amp;lt; &amp;apos;4&amp;apos;)
+            {
+                break;
+            }else{
+                printf(&amp;quot;输入非法，请重新输入！\n&amp;quot;);
+            }
+        }
+
+        p-&amp;gt;mtype = 1;
+        res = -1;
+        while(res == -1)
+        {
+            res = msgsnd( msgid , p , sizeof(p-&amp;gt;mdata) , 0 );
+        }
+    }  
+
+    return 0;   
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;player2-c&quot;&gt;&lt;a href=&quot;#player2-c&quot; class=&quot;headerlink&quot; title=&quot;player2.c&quot;&gt;&lt;/a&gt;player2.c&lt;/h4&gt;&lt;p&gt;代码跟&lt;code&gt;player1.c&lt;/code&gt;，就&lt;code&gt;p-&amp;gt;mtype = 1;&lt;/code&gt;这行1的值，改为2.&lt;br&gt;可以只写一个文件，然后运行的时候，通过stdin传值进去。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;在操作系统课中，需要进行进程间通信的实验，我就写了一个小的程序，通过消息队列进行通信。除了消息队列外，还有共享内存，管道，信号等通信方式。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="ubuntu" scheme="http://limaolong.cn/categories/ubuntu/"/>
+    
+    
+      <category term="IPC" scheme="http://limaolong.cn/tags/IPC/"/>
+    
+      <category term="ubuntu" scheme="http://limaolong.cn/tags/ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>【Ubuntu学习】Linux中alias的使用</title>
@@ -85,9 +355,9 @@
       <category term="ubuntu" scheme="http://limaolong.cn/categories/ubuntu/"/>
     
     
-      <category term="alias" scheme="http://limaolong.cn/tags/alias/"/>
-    
       <category term="ubuntu" scheme="http://limaolong.cn/tags/ubuntu/"/>
+    
+      <category term="alias" scheme="http://limaolong.cn/tags/alias/"/>
     
   </entry>
   

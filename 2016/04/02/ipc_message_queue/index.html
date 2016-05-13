@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Github,Git," />
+  <meta name="keywords" content="IPC,ubuntu," />
 
 
 
@@ -59,43 +59,16 @@
 
 
 
-<meta name="description" content="如何使用GitHub目标：
-
-了解如何创建和使用代码库
-了解创建并管理分支
-了解如何将修改过的文件提交到代码库
-开启并合并一个上传请求">
+<meta name="description" content="在操作系统课中，需要进行进程间通信的实验，我就写了一个小的程序，通过消息队列进行通信。除了消息队列外，还有共享内存，管道，信号等通信方式。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="几个简单的Github操作">
-<meta property="og:url" content="http://limaolong.cn/2015/06/13/simple_exercises_of_github/index.html">
+<meta property="og:title" content="【Ubuntu学习】Linux多进程通信之消息队列">
+<meta property="og:url" content="http://limaolong.cn/2016/04/02/ipc_message_queue/index.html">
 <meta property="og:site_name" content="Green's Blog">
-<meta property="og:description" content="如何使用GitHub目标：
-
-了解如何创建和使用代码库
-了解创建并管理分支
-了解如何将修改过的文件提交到代码库
-开启并合并一个上传请求">
-<meta property="og:image" content="https://guides.github.com/activities/hello-world/create-new-repo.png">
-<meta property="og:image" content="https://guides.github.com/activities/hello-world/branching.png">
-<meta property="og:image" content="https://guides.github.com/activities/hello-world/readme-edits.gif">
-<meta property="og:image" content="https://guides.github.com/activities/hello-world/commit.png">
-<meta property="og:image" content="https://guides.github.com/activities/hello-world/pr-tab.gif">
-<meta property="og:image" content="https://guides.github.com/activities/hello-world/pick-branch.png">
-<meta property="og:image" content="https://guides.github.com/activities/hello-world/diff.png">
-<meta property="og:image" content="https://guides.github.com/activities/hello-world/create-pr.png">
-<meta property="og:image" content="https://guides.github.com/activities/hello-world/pr-form.png">
-<meta property="og:image" content="https://guides.github.com/activities/hello-world/merge-button.png">
-<meta property="og:image" content="https://guides.github.com/activities/hello-world/delete-button.png">
-<meta property="og:updated_time" content="2016-03-17T06:27:31.891Z">
+<meta property="og:description" content="在操作系统课中，需要进行进程间通信的实验，我就写了一个小的程序，通过消息队列进行通信。除了消息队列外，还有共享内存，管道，信号等通信方式。">
+<meta property="og:updated_time" content="2016-05-12T07:42:32.804Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="几个简单的Github操作">
-<meta name="twitter:description" content="如何使用GitHub目标：
-
-了解如何创建和使用代码库
-了解创建并管理分支
-了解如何将修改过的文件提交到代码库
-开启并合并一个上传请求">
-<meta name="twitter:image" content="https://guides.github.com/activities/hello-world/create-new-repo.png">
+<meta name="twitter:title" content="【Ubuntu学习】Linux多进程通信之消息队列">
+<meta name="twitter:description" content="在操作系统课中，需要进行进程间通信的实验，我就写了一个小的程序，通过消息队列进行通信。除了消息队列外，还有共享内存，管道，信号等通信方式。">
 
 
 
@@ -113,7 +86,7 @@
   };
 </script>
 
-  <title> 几个简单的Github操作 | Green's Blog </title>
+  <title> 【Ubuntu学习】Linux多进程通信之消息队列 | Green's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -250,7 +223,7 @@
             
             
               
-                几个简单的Github操作
+                【Ubuntu学习】Linux多进程通信之消息队列
               
             
           </h1>
@@ -262,8 +235,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-06-13T00:00:00+08:00" content="2015-06-13">
-              2015-06-13
+            <time itemprop="dateCreated" datetime="2016-04-02T00:00:00+08:00" content="2016-04-02">
+              2016-04-02
             </time>
           </span>
 
@@ -276,8 +249,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index">
-                    <span itemprop="name">Git</span>
+                  <a href="/categories/ubuntu/" itemprop="url" rel="index">
+                    <span itemprop="name">ubuntu</span>
                   </a>
                 </span>
 
@@ -292,8 +265,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/06/13/simple_exercises_of_github/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/13/simple_exercises_of_github/" itemprop="commentsCount"></span>
+                <a href="/2016/04/02/ipc_message_queue/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/02/ipc_message_queue/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -315,72 +288,249 @@
       
 
       
-        <h2 id="如何使用GitHub"><a href="#如何使用GitHub" class="headerlink" title="如何使用GitHub"></a>如何使用GitHub</h2><p>目标：</p>
-<ul>
-<li>了解如何创建和使用代码库</li>
-<li>了解创建并管理分支</li>
-<li>了解如何将修改过的文件提交到代码库</li>
-<li>开启并合并一个上传请求</li>
-</ul>
+        <blockquote>
+<p>在操作系统课中，需要进行进程间通信的实验，我就写了一个小的程序，通过消息队列进行通信。除了消息队列外，还有共享内存，管道，信号等通信方式。</p>
+</blockquote>
+<hr>
 <a id="more"></a>
-<h3 id="创建代码库（远程仓库-repository）"><a href="#创建代码库（远程仓库-repository）" class="headerlink" title="创建代码库（远程仓库/repository）"></a>创建代码库（远程仓库/repository）</h3><ol>
-<li>点击右上角的+号下拉菜单，选择创建代码库（<code>New repository</code>）。</li>
-<li>输入仓库的名字，比如hello-world。</li>
-<li>对仓库进行简短的描述。</li>
-<li>选择仓库类型，目前公开的是免费的，私有的需要付费，视个人情况而定。</li>
-<li>接着选择用README文件初始化仓库，同时根据需要选择代码的证书。<br>如下图：</li>
-</ol>
-<p><img src="https://guides.github.com/activities/hello-world/create-new-repo.png" alt="create repository"></p>
-<h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><p>一般一个项目开发，最起码有4个分支：产品分支(<code>product</code>)、测试分支(<code>test</code>)、开发分支(<code>development</code>)、主分支(<code>master</code>).<br>如果需要开发几个大的功能，而且是团队开发，那么需要在dev的基础上创建自己的分支，即创建一个dev分支的复制。<br>如下图，展示了feature分支完整的生命周期。</p>
-<p><img src="https://guides.github.com/activities/hello-world/branching.png" alt="分支生命周期"></p>
-<p>现在，我们只演示一下如何在master分支上创建分支。</p>
-<ol>
-<li>进入刚才创建的代码库的页面。</li>
-<li>点击分支的下拉框，在搜索框内输入新的分支名字，如readme-edits</li>
-<li>点击创建分支<br>如下图：</li>
-</ol>
-<p><img src="https://guides.github.com/activities/hello-world/readme-edits.gif" alt="此处输入图片的描述"></p>
-<h3 id="修改代码并提交-commit-修改"><a href="#修改代码并提交-commit-修改" class="headerlink" title="修改代码并提交(commit)修改"></a>修改代码并提交(<code>commit</code>)修改</h3><p>现在，我们的代码库有2个分支：master和readme-edits。<br>我们在readme-edits分支上，对本来的readme文件进行修改，然后将改动提交上去。<br>每次提交修改的时候，我们需要输入一些备注，这样可以让别人看到你修改的目的和内容等等，同时也帮助自己以后对项目的复看(<code>review</code>)。<br>接下来，我们进行文件修改和提交：</p>
-<ol>
-<li>点击打开README.md的文件</li>
-<li>点击右侧的修改按钮(铅笔形状)，进入修改页面。</li>
-<li>对文件进行修改</li>
-<li>之后，输入备注</li>
-<li>选择是否创建新的分支，还是提交到当前分支，默认提交到当前分支</li>
-<li>点击提交修改<br>具体操作如下图：</li>
-</ol>
-<p><img src="https://guides.github.com/activities/hello-world/commit.png" alt="此处输入图片的描述"></p>
-<h3 id="建立一个上传请求-Pull-Request"><a href="#建立一个上传请求-Pull-Request" class="headerlink" title="建立一个上传请求(Pull Request)"></a>建立一个上传请求(<code>Pull Request</code>)</h3><p>经过上述步骤后，我们想比较master进行，进行了修改，而且提交了修改，这时候，我们需要发送一次请求，将修改合并到master分支上。<br>现在，来创建一个上传请求：</p>
-<ol>
-<li>点击<code>Pull Request</code>标签，进入页面，点击创建新请求(<code>New pull request</code>)</li>
-</ol>
-<p><img src="https://guides.github.com/activities/hello-world/pr-tab.gif" alt="此处输入图片的描述"></p>
-<ol>
-<li>选择创建的分支，与master分支，进行比较</li>
-</ol>
-<p><img src="https://guides.github.com/activities/hello-world/pick-branch.png" alt="此处输入图片的描述"></p>
-<ol>
-<li>浏览你做的修改，并和master分支进行比较，确保是你想要提交的东西。</li>
-</ol>
-<p><img src="https://guides.github.com/activities/hello-world/diff.png" alt="此处输入图片的描述"></p>
-<ol>
-<li>当你确保这些修改是你想要提交的修改，点击绿色的创建上传按钮。</li>
-</ol>
-<p><img src="https://guides.github.com/activities/hello-world/create-pr.png" alt="此处输入图片的描述"></p>
-<ol>
-<li>给你的这次请求写一个标题，同时写简短的描述</li>
-</ol>
-<p><img src="https://guides.github.com/activities/hello-world/pr-form.png" alt="此处输入图片的描述"></p>
-<h3 id="允许请求，合并代码"><a href="#允许请求，合并代码" class="headerlink" title="允许请求，合并代码"></a>允许请求，合并代码</h3><p>最后，将readme-edits分支合并到master分支：</p>
-<ol>
-<li>点击合并请求按钮，将分支合并到master分支</li>
-<li>点击确认合并</li>
-<li>当合并完成后，就可以删除readme-edits分支了。</li>
-</ol>
-<p><img src="https://guides.github.com/activities/hello-world/merge-button.png" alt="此处输入图片的描述"></p>
-<p><img src="https://guides.github.com/activities/hello-world/delete-button.png" alt="此处输入图片的描述"></p>
-<p>至此，已经完成了Github的一些基本操作。</p>
-<p>本文原文：<a href="https://guides.github.com/activities/hello-world/" target="_blank" rel="external">https://guides.github.com/activities/hello-world/</a></p>
+<h2 id="【Linux学习】多进程通信之消息队列"><a href="#【Linux学习】多进程通信之消息队列" class="headerlink" title="【Linux学习】多进程通信之消息队列"></a>【Linux学习】多进程通信之消息队列</h2><h3 id="什么是消息队列"><a href="#什么是消息队列" class="headerlink" title="什么是消息队列"></a>什么是消息队列</h3><p>摘自维基百科：<br>在计算机科学中，消息队列（英语：Message queue）是一种进程间通信或同一进程的不同线程间的通信方式，它使用队列（queue）来处理一系列的输入（通常是来自用户）。消息队列提供了异步的通信协议，每一个贮列中的纪录包含详细说明的数据，包含发生的时间，输入设备的种类，以及特定的输入参数，也就是说：消息的发送者和接收者不需要同时与消息队列互交。消息会保存在队列中，直到接收者取回它。</p>
+<p>简单点，就是可以实现异步通信的进程间或同一线程间的通信方式</p>
+<h3 id="消息队列部分函数介绍"><a href="#消息队列部分函数介绍" class="headerlink" title="消息队列部分函数介绍"></a>消息队列部分函数介绍</h3><p>英语水平较高者，请看： <a href="http://linux.die.net/man/2" target="_blank" rel="external">http://linux.die.net/man/2</a> 下的msgget,msgsnd,msgrcv,msgctl等函数。</p>
+<h4 id="msgget函数"><a href="#msgget函数" class="headerlink" title="msgget函数"></a>msgget函数</h4><ul>
+<li>函数声明：int msgget(key_t key, int msgflg)</li>
+<li>函数功能：打开或创建一个消息队列</li>
+<li>函数变量：<ul>
+<li>key_t key是一个整型变量，一般通过<a href="http://blog.csdn.net/hwz119/article/details/1613601" target="_blank" rel="external">ftok函数</a>获得。</li>
+<li>int msgflg是一个控制变量，可以取IPC_CREAT和IPC_EXCL<ul>
+<li>仅使用IPC_CREAT，如果用key唯一标识消息队列（以下同）不存在，则创建新队列；如果队列存在，则打开队列，函数执行成功则返回队列的id。</li>
+<li>仅使用IPC_EXCL，若队列存在，则打开队列。若队列不存在，则函数执行失败，同时错误为<code>ENOENT</code></li>
+<li>同时使用IPC_CREAT和IPC_EXCL，如果队列不存在，则创建新队列，若队列存在，则函数返回-1，同时错误为<code>EEXIST</code>。</li>
+<li>标志使用<code>|</code>来相连，同时可以和系统权限相或，如<code>IPC_CREAT|0666</code>，数字表示的权限同linux。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>函数返回值：<ul>
+<li>成功返回消息队列的唯一标识符</li>
+<li>失败则返回-1，同时将错误类型保存进errno变量中。（<a href="http://blog.csdn.net/kofiory/article/details/5790409" target="_blank" rel="external">errno数值对应错误</a>）</li>
+</ul>
+</li>
+</ul>
+<h4 id="msgsnd函数"><a href="#msgsnd函数" class="headerlink" title="msgsnd函数"></a>msgsnd函数</h4><ul>
+<li>函数声明：int msgsnd(int msqid, const void *msgp, size_t msgsz, int msgflg)</li>
+<li>函数功能：用来向消息队列发送消息，调用该函数的进程需要队列的写<code>w</code>权限</li>
+<li><p>函数变量：</p>
+<ul>
+<li>int msqid是msgget返回的唯一标识符。</li>
+<li>const void *msgp是一个指向准备发送的消息的结构体的指针。该结构体需要特定的结构，结构如下：<blockquote>
+<p>struct msgbuf {<br>  long mtype;        //message type, must be &gt; 0<br>  char mtext[256];    // message data<br>};</p>
+</blockquote>
+</li>
+<li>size_t msgsz是用来指明结构体中，mtext的大小（<strong>注意是mtext不是msgbuf</strong>），是一个非负整数。</li>
+<li>int msgflg是一个控制变量，用来控制当出现异常（队列满、无队列等）时的事件，一般是传0。详情请见之前说的英文页面。</li>
+</ul>
+</li>
+<li><p>函数返回值：</p>
+<ul>
+<li>成功返回0，成功则将结构体中的mtext的拷贝<code>copy</code>加入消息队列。</li>
+<li>失败则返回-1，同时将错误类型保存进errno变量中。（<a href="http://blog.csdn.net/kofiory/article/details/5790409" target="_blank" rel="external">errno数值对应错误</a>）</li>
+</ul>
+</li>
+</ul>
+<h4 id="msgrcv函数"><a href="#msgrcv函数" class="headerlink" title="msgrcv函数"></a>msgrcv函数</h4><ul>
+<li>函数声明：ssize_t msgrcv(int msqid, void *msgp, size_t msgsz, long msgtyp,<pre><code>int msgflg)
+</code></pre></li>
+<li>函数功能：用来读取消息队列的消息，调用该函数的进程需要队列的读<code>r</code>权限</li>
+<li><p>函数变量：</p>
+<ul>
+<li>int msqid、void *msgp、size_t msgsz意义同msgsnd函数。</li>
+<li>long msgtyp是一个用来表示消息类型的长整型。<ul>
+<li>若为0，则读取消息队列的第一个消息。</li>
+<li>若为大于0的数<code>n</code>，则读取消息队列中类型（即结构体中的<code>mtype</code>变量）为<code>n</code>的第一个消息，<strong>不读取其他类型消息</strong>。</li>
+</ul>
+</li>
+<li>int msgflg用处同上，不过可取的值和事件不同，一般取0就可以了。</li>
+</ul>
+</li>
+<li><p>函数返回值：</p>
+<ul>
+<li>成功返回读取的字节数。</li>
+<li>失败则返回-1，同时将错误类型保存进errno变量中。（<a href="http://blog.csdn.net/kofiory/article/details/5790409" target="_blank" rel="external">errno数值对应错误</a>）</li>
+</ul>
+</li>
+</ul>
+<h4 id="msgctl函数"><a href="#msgctl函数" class="headerlink" title="msgctl函数"></a>msgctl函数</h4><ul>
+<li>函数声明：int msgctl(int msqid, int cmd, struct msqid_ds *buf);</li>
+<li>函数功能：用来对消息队列进行一些操作</li>
+<li><p>函数变量：</p>
+<ul>
+<li>int msqid同上。</li>
+<li>int cmd用来制定对消息队列执行的操作，可取IPC_STAT、IPC_SET、IPC_RMID、IPC_INFO等。详情请见之前说的英文页面。</li>
+<li>struct msqid_ds *buf是指向msgid_ds结构的指针，它指向消息队列模式和访问权限等的结构，结构如下： <blockquote>
+<p>struct msqid_ds {<br>  struct ipc_perm msg_perm;     /<em> Ownership and permissions </em>/<br>  time_t          msg_stime;    /<em> Time of last msgsnd(2) </em>/<br>  time_t          msg_rtime;    /<em> Time of last msgrcv(2) </em>/<br>  time_t          msg_ctime;    /<em> Time of last change </em>/<br>  unsigned long   __msg_cbytes; /* Current number of bytes in</p>
+<pre><code>queue (nonstandard) */
+</code></pre><p>  msgqnum_t       msg_qnum;     /* Current number of messages</p>
+<pre><code>in queue */
+</code></pre><p>  msglen_t        msg_qbytes;   /* Maximum number of bytes</p>
+<pre><code>allowed in queue */
+</code></pre><p>  pid_t           msg_lspid;    /<em> PID of last msgsnd(2) </em>/<br>  pid_t           msg_lrpid;    /<em> PID of last msgrcv(2) </em>/<br>};</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>函数返回值：</p>
+<ul>
+<li>成功返回0</li>
+<li>失败则返回-1，同时将错误类型保存进errno变量中。（<a href="http://blog.csdn.net/kofiory/article/details/5790409" target="_blank" rel="external">errno数值对应错误</a>）</li>
+</ul>
+</li>
+</ul>
+<h3 id="使用消息队列"><a href="#使用消息队列" class="headerlink" title="使用消息队列"></a>使用消息队列</h3><p>这里使用消息队列实现了一个猜拳的小游戏。<br>代码如下：</p>
+<h4 id="msgdata-h"><a href="#msgdata-h" class="headerlink" title="msgdata.h"></a>msgdata.h</h4><pre><code>#ifndef _MSGDATA_H
+#define _MSGDATA_H
+#include &lt;sys/types.h&gt;
+#include &lt;sys/ipc.h&gt;
+#include &lt;sys/msg.h&gt;
+#include &lt;errno.h&gt; 
+#include &lt;unistd.h&gt;  
+#include &lt;stdlib.h&gt;  
+#include &lt;stdio.h&gt;  
+#include &lt;string.h&gt;  
+
+typedef struct  msgbuf  
+{  
+    long    mtype;  
+    char    mdata[256];  
+}MSGBUF;  
+#endif
+</code></pre><h4 id="referee-c"><a href="#referee-c" class="headerlink" title="referee.c"></a>referee.c</h4><pre><code>#include &quot;msgdata.h&quot;
+
+int main(void)  
+{
+    int     msgid,res;
+    key_t   msgkey;  
+    char msg[3][20] = {&quot;剪刀&quot;,&quot;石头&quot;,&quot;布&quot;};
+    int p1,p2;
+
+    MSGBUF msgdata , *p;
+    p = &amp;msgdata;
+
+    msgkey = ftok ( &quot;/home/green&quot; , 1);
+    if(msgkey == -1)  
+    {  
+        fprintf(stderr, &quot;ftok failed with error: %d\n&quot;, errno);  
+        exit(EXIT_FAILURE);  
+    }
+
+    msgid = msgget( msgkey , IPC_CREAT | 0666 ) ;              
+    if(msgid == -1)  
+    {  
+        fprintf(stderr, &quot;msgget failed with error: %d\n&quot;, errno);  
+        exit(EXIT_FAILURE);  
+    }
+
+    while(1)  
+    {    
+        p1 = -1;
+        p2 = -1;
+        res = -1; 
+        while(1)
+        {
+            res = msgrcv( msgid , p , sizeof(p-&gt;mdata) , 1 , 0); 
+            if(res == -1)
+            {
+                fprintf(stderr, &quot;msgrcv failed with error: %d\n&quot;, errno);
+            }else
+            {
+                p1 = p-&gt;mdata[0] - &apos;0&apos;;
+                printf(&quot;Player one gives %s \n&quot;, msg[p1-1]);
+            }
+
+            res = msgrcv( msgid , p , sizeof(p-&gt;mdata) , 2, 0 );
+            if(res == -1)    /*读奇数消息*/  
+            {
+                fprintf(stderr, &quot;msgrcv failed with error: %d\n&quot;, errno);
+            }else
+            {
+                p2 = p-&gt;mdata[0] - &apos;0&apos;;
+                printf(&quot;Player two gives %s \n&quot;,msg[p2-1]);
+            }
+
+            if(p1 &gt; 0 &amp;&amp; p2 &gt; 0)
+            {
+                break;
+            }
+        } 
+
+        if(p1 == 1 &amp;&amp; p2 == 3)
+        {
+            printf(&quot;Player one wins!\n&quot;);
+        }else if(p1 == 3 &amp;&amp; p2 == 1)
+        {
+            printf(&quot;Player two wins!\n&quot;);
+        }else if(p1 == p2)
+        {
+            printf(&quot;This is tie game!\n&quot;);
+        }else if(p1 &gt; p2)
+        {
+            printf(&quot;Player one wins!\n&quot;);
+        }else{
+            printf(&quot;Player two wins!\n&quot;);
+        }
+
+        p1 = -1;
+        p2 = -1;
+    }  
+    return 0;  
+}  
+</code></pre><h4 id="player1-c"><a href="#player1-c" class="headerlink" title="player1.c"></a>player1.c</h4><pre><code>#include &quot;msgdata.h&quot;
+int main(void)
+{
+    int     msgid,res;  
+    key_t   msgkey;  
+    MSGBUF msgdata , *p ;                                            
+    p = &amp;msgdata;
+
+    msgkey = ftok ( &quot;/home/green&quot; , 1); 
+    if(msgkey == -1)  
+    {  
+        fprintf(stderr, &quot;ftok failed with error: %d\n&quot;, errno);  
+        exit(EXIT_FAILURE);  
+    }
+
+    msgid = msgget( msgkey , IPC_CREAT | 0666 ) ;              
+    if(msgid == -1)  
+    {  
+        fprintf(stderr, &quot;msgget failed with error: %d\n&quot;, errno);  
+        exit(EXIT_FAILURE);  
+    }
+
+    while(1)  
+    {  
+        while(1)
+        {
+            printf(&quot;请输入数字(1.剪刀2.石头3.布)：\n  &quot;);  
+            fflush( stdin );                              
+            gets( p-&gt;mdata );                             
+            if(p-&gt;mdata[0] &gt;&apos;0&apos; &amp;&amp; p-&gt;mdata[0] &lt; &apos;4&apos;)
+            {
+                break;
+            }else{
+                printf(&quot;输入非法，请重新输入！\n&quot;);
+            }
+        }
+
+        p-&gt;mtype = 1;
+        res = -1;
+        while(res == -1)
+        {
+            res = msgsnd( msgid , p , sizeof(p-&gt;mdata) , 0 );
+        }
+    }  
+
+    return 0;   
+}
+</code></pre><h4 id="player2-c"><a href="#player2-c" class="headerlink" title="player2.c"></a>player2.c</h4><p>代码跟<code>player1.c</code>，就<code>p-&gt;mtype = 1;</code>这行1的值，改为2.<br>可以只写一个文件，然后运行的时候，通过stdin传值进去。</p>
 
       
     </div>
@@ -395,9 +545,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Github/" rel="tag">#Github</a>
+            <a href="/tags/IPC/" rel="tag">#IPC</a>
           
-            <a href="/tags/Git/" rel="tag">#Git</a>
+            <a href="/tags/ubuntu/" rel="tag">#ubuntu</a>
           
         </div>
       
@@ -406,13 +556,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2015/10/25/ubuntu-how_to_use_alias/" rel="next" title="【Ubuntu学习】Linux中alias的使用">
+                <i class="fa fa-chevron-left"></i> 【Ubuntu学习】Linux中alias的使用
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/07/16/lamp/" rel="prev" title="Ubuntu下mysql，php以及apache的安装和配置">
-                Ubuntu下mysql，php以及apache的安装和配置 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -628,7 +778,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用GitHub"><span class="nav-number">1.</span> <span class="nav-text">如何使用GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建代码库（远程仓库-repository）"><span class="nav-number">1.1.</span> <span class="nav-text">创建代码库（远程仓库/repository）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建分支"><span class="nav-number">1.2.</span> <span class="nav-text">创建分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改代码并提交-commit-修改"><span class="nav-number">1.3.</span> <span class="nav-text">修改代码并提交(commit)修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立一个上传请求-Pull-Request"><span class="nav-number">1.4.</span> <span class="nav-text">建立一个上传请求(Pull Request)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#允许请求，合并代码"><span class="nav-number">1.5.</span> <span class="nav-text">允许请求，合并代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#【Linux学习】多进程通信之消息队列"><span class="nav-number">1.</span> <span class="nav-text">【Linux学习】多进程通信之消息队列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是消息队列"><span class="nav-number">1.1.</span> <span class="nav-text">什么是消息队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#消息队列部分函数介绍"><span class="nav-number">1.2.</span> <span class="nav-text">消息队列部分函数介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#msgget函数"><span class="nav-number">1.2.1.</span> <span class="nav-text">msgget函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#msgsnd函数"><span class="nav-number">1.2.2.</span> <span class="nav-text">msgsnd函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#msgrcv函数"><span class="nav-number">1.2.3.</span> <span class="nav-text">msgrcv函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#msgctl函数"><span class="nav-number">1.2.4.</span> <span class="nav-text">msgctl函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用消息队列"><span class="nav-number">1.3.</span> <span class="nav-text">使用消息队列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#msgdata-h"><span class="nav-number">1.3.1.</span> <span class="nav-text">msgdata.h</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#referee-c"><span class="nav-number">1.3.2.</span> <span class="nav-text">referee.c</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#player1-c"><span class="nav-number">1.3.3.</span> <span class="nav-text">player1.c</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#player2-c"><span class="nav-number">1.3.4.</span> <span class="nav-text">player2.c</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -903,9 +1053,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'limaolong';
-      var disqus_identifier = '2015/06/13/simple_exercises_of_github/';
-      var disqus_title = '几个简单的Github操作';
-      var disqus_url = 'http://limaolong.cn/2015/06/13/simple_exercises_of_github/';
+      var disqus_identifier = '2016/04/02/ipc_message_queue/';
+      var disqus_title = '【Ubuntu学习】Linux多进程通信之消息队列';
+      var disqus_url = 'http://limaolong.cn/2016/04/02/ipc_message_queue/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
